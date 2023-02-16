@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.co">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="icons/weather.svg" alt="">
+            <span>WeatherApp</span>
+        </a>
+        <ul class="navbar">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+
+            <li><a href="#">Map</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+        <div class="main">
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <div id="wrapper">
+        <div class="form-container">
+            <!-- <video autoplay muted loop class="bgvideo" style="height: 500px;  width: 100%; object-fit: cover; z-index: -1;margin-top:-25px ; position: absolute;">
+                <source src="video.mov" >
+               </video> -->
+            <form class="form">
+                <div class="inputcontain">
+                    <input id="search" type="search" class="input" placeholder="Search Location here.." />
+                    <div id="suggestionsContainer"></div>
+                </div>
+                <!-- <div id="clear" type="" class="clear-results" >X</div> -->
+                <button type="submit" class="inputSubmit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        width="30" height="30">
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path
+                            d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"
+                            fill="#a85cf5" />
+                    </svg></button>
+                <!--  <button id="clear" class="clear-results" style="border-radius:50%; width:25px; height: 25px; opacity:0.3;background-color: rgb(246, 249, 252);">X</button> -->
+
+            </form>
+
+            <img id="c1" src="img/cloud.png" alt="">
+            <img id="c5" src="img/cloud.png" alt="">
+            <img id="c2" src="img/cloud1.png" alt="">
+            <img id="c6" src="img/cloud1.png" alt="">
+            <img id="c3" src="img/cloud.png" alt="">
+            <div class="clockcontain">
+
+                <div id="clock" onload="currentTime()"></div>
+                <!-- <div class = "dayname"></div> -->
+                <div class="date1"></div>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="mainsec">
+        <div class="today">
+
+            <div class="div1">
+                <div class="loc"> <i class="ri-map-pin-range-fill"></i>
+                    <div class="locValue">Delhi</div>
+                </div>
+                <div class="temp"><i class="ri-celsius-line" ></i><span class="tempValue">23 &#xb0;</span>
+                </div>
+            </div>
+            <div class="div2">
+                <div class="wlogo"><img src="icons/cloudy-sun.svg" class="icon" alt=""></div>
+            </div>
+            <div class="wdeatil">Cloudy</div>
+            <div class="details">
+                <div class="detail">
+                    <div class="label">Feels like</div>
+                    <div class="value feelslike">18°C</div>
+                </div>
+                <div class="detail">
+                    <div class="label humidity">Humidity</div>
+                    <div class="value humidityval">60%</div>
+                </div>
+                <div class="detail">
+                    <div class="label wind">Wind</div>
+                    <div class="value windval">10 mph</div>
+                </div>
+                <div class="detail">
+                    <div class="label">Visibility</div>
+                    <div class="value Visibilityval">10 km</div>
+                </div>
+                <div class="detail">
+                    <div class="label">UV Index</div>
+                    <div class="value uvValue">3</div>
+                </div>
+                <div class="detail">
+                    <div class="label">Pressure</div>
+                    <div class="value PressureVal">1013 hPa</div>
+                </div>
+            </div>
+        </div>
+        <div class="fiveday">
+            <div class="days">
+                <div class="day">
+                    <div class="dayName mon">Mon</div>
+                    <div class="daylogo"><img src="icons/day.svg" alt="" class="monlogo" ></div>
+                    <div class="daytext montext">Sunny</div>
+                    <div class="daytemp montemp"> 40 &#xb0;</div>
+                </div>
+                <div class="day">
+                    <div class="dayName">Tue</div>
+                    <div class="daylogo "><img src="icons/cloudy-night-2.svg" alt="" class="tuelogo"></div>
+                    <div class="daytext tuetext">Cloudy</div>
+                    <div class="daytemp tuetemp"> 35 &#xb0;</div>
+                </div>
+             
+                <div class="day">
+                    <div class="dayName">Wed</div>
+                    <div class="daylogo"><img src="icons/thunder.svg" alt=""class="wedlogo" ></div>
+                    <div class="daytext wedtext">Thunder</div>
+                    <div class="daytemp wedtemp"> 30 &#xb0;</div>
+                </div>
+             
+                <div class="day">
+                    <div class="dayName">Thurs</div>
+                    <div class="daylogo"><img src="icons/rainy-sun.svg" alt="" class="thurslogo"></div>
+                    <div class="daytext thurstext">Raining</div>
+                    <div class="daytemp thurstemp"> 35 &#xb0;</div>
+                </div>
+             
+                <div class="day">
+                    <div class="dayName">Fri</div>
+                    <div class="daylogo"><img src="icons/cloudy-sun.svg" alt="" class="frilogo"></div>
+                    <div class="daytext fritext">Cloudy</div>
+                    <div class="daytemp fritemp"> 30 &#xb0;</div>
+                </div>
+             
+                <div class="day">
+                    <div class="dayName">Sat</div>
+                    <div class="daylogo"><img src="icons/night.svg" alt="" class="satlogo"></div>
+                    <div class="daytext sattext">Clouds</div>
+                    <div class="daytemp sattemp"> 30 &#xb0;</div>
+                </div>
+             
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+
+    <!-- <div class="results-container">
+        <ul class="results-list" id="list">
+ 
+        </ul>
+     </div> -->
+
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

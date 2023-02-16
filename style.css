@@ -1,0 +1,738 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    
+    /* overflow-x:hidden ; */
+}
+
+:root{
+  
+    --bg-color:white;
+    --text-color: white;
+    --main-color:#ffeb0d;
+    
+}
+
+body{
+    /* background: rgb(172, 220, 255); */
+    min-height: 100vh;
+    overflow-x:hidden ;
+    background: var(--bg-color);
+    color:var(--text-color);
+}
+
+header{
+    /* overflow-x:hidden ; */
+    position:sticky;
+    width: 100%;
+    height: 70px;
+    top:0;
+    right:0;
+    z-index: 1000;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background:linear-gradient(#1160e9,#4788f9,#1160e9) ;
+    /* background:#313235 ; */
+    padding: 28px 12%;
+    transition: all 0.5s ease;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo i{
+    color:#faed57;
+    /* color: white; */
+    font-size: 28px;
+    margin-right:3px;
+}
+
+.logo span{
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+
+}
+
+
+.navbar{
+    display: flex;
+
+}
+
+.navbar a{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding:5px 0;
+    margin: 0px 50px;
+    transition: all 0.1s ease;
+}
+
+.navbar a:hover{
+    color: var(--main-color);
+}
+.navbar a.active{
+    color: var(--main-color);
+}
+
+
+
+
+#menu-icon{
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+    display:none
+}
+#wrapper{
+     /* min-height: 400px; */
+    margin-top: 30px;
+    /* position: absolute; */
+}
+.form-container{
+    
+    position: relative;
+}
+.form{
+    display: flex;
+   /* position: relative; */
+   /* position: absolute; */
+   
+justify-content: center;
+     gap: 10px;
+    transition: all 1s ease;
+}
+
+.input
+{
+    /* margin: 0 auto; */
+    width:400px;
+    height: 40px;
+    border-radius: 20px;
+    color: #1160e9;
+    border:2px solid  #1160e9;
+    display: flex;
+    box-shadow: inset 0 0 10px #1160e9;
+    text-indent: 10px; 
+    
+}
+.inputcontain{
+    position: relative; 
+}
+.input:focus{
+    border: none;
+    box-shadow: 0 0 5px 5px #1160e9 ;
+}
+::-webkit-input-placeholder{
+    padding-left: 0.4em;
+    color:#669bf7 ;
+
+
+}
+
+.inputSubmit{
+    border: none;
+    background-color: white;
+}
+#suggestionsContainer{
+    left: 15px;
+    margin-top: 10px;
+    color: #4577cc;
+    position: absolute;
+    z-index: 10000;
+    width: 350px;
+    background:transparent;
+    /* backdrop-filter: blur(5px); */
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+
+/* .clear-results{
+    position: relative;
+    right: 33px;
+    border-radius:50%; 
+    width:25px;
+    color: black;
+     height: 25px;
+      opacity:0.3;
+      margin-top: 6px;
+      background-color: rgb(246, 249, 252);
+      padding-right: -3em;
+} */
+#c1
+{ 
+    position: absolute;
+    top:10px;
+    left: 100px;
+    height: 100px;
+    animation-name: cloud;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+#c2
+{ position: absolute;
+    top:10px;
+    left: 300px;
+    height: 100px;
+    animation-name: cloud;
+    animation-timing-function: linear;
+    animation-duration: 2.2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+#c3
+{
+    position: absolute;
+    top:10px;
+    right: 300px;
+    height: 100px;
+    animation-name: cloud;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+ 
+}
+#c4
+{
+    position: absolute;
+    right: 100px;
+    top:10px;
+    height: 100px;
+    animation-name: cloud;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+#c5
+{ 
+    position: absolute;
+    left: 550px;
+    top: 60px;
+    height: 80px;
+    animation-name: cloud1;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+
+}
+#c6
+{
+    position: absolute;
+    right: 550px;
+    top: 60px;
+    height: 80px;
+    animation-name: cloud1;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+.clockcontain{
+    position: absolute;
+    right: 10px;
+    background-color: #aac8fc;
+    padding: 5px;
+    border-radius: 1em;
+    padding: 1em;
+    box-shadow: inset 0 0 20px #1160e9;
+
+}
+#clock{
+    margin-right: 5px;
+    font-size: 40px;
+    color: #1160e9;
+   
+}
+
+.date1{
+    color: #1160e9;
+    justify-content: center;
+    /* margin-left:5px ;
+    padding-left: 5px; */
+    letter-spacing: 3px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+@keyframes cloud {
+    from{top:10px;}
+    to{
+        top: 16px;
+    }
+    
+}
+@keyframes cloud1 {
+    from{top:60px;}
+    to{
+        top: 65px;
+    }
+    
+}
+
+.mainsec{
+    margin-top: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 2em;
+}
+.today{
+    width: 45%;
+    height: 30rem;
+    position: relative;
+    overflow-x: hidden;
+    background-image: url(img/bluebg1.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    border-radius: 10px;
+}
+
+
+.div1
+{
+    position: absolute;
+    top: 2%;
+    left: 20px;
+    z-index: 1000;
+    color: white;
+ 
+}
+
+
+
+.loc i{
+    color: rgba(235, 223, 48, 0.882);
+    font-size: 40px;
+    height: 30px;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 10px;
+}
+
+.loc{
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.div2
+{
+    position: absolute;
+    right: 4em;
+    top: 2em;
+    display: flex;
+}
+.wdeatil{
+    position: absolute;
+    left: 30%;
+    top: 32%;
+    font-size: 50px;  
+    text-shadow:  2px 2px 5px yellow;  
+}
+
+.wlogo img{
+    width: 10em;
+    text-shadow:  2px 2px 5px yellow;  
+}
+
+.temp{ 
+    /* margin-left: 60px; */
+    justify-content: center;
+    display: flex;
+    font-size: 40px;
+    gap: 10px;
+    align-items:center;
+}
+.temp i{
+    font-size: 30px;
+    color: rgb(223, 235, 48);
+    margin-top: 5px;
+}
+
+
+.details {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
+    width: 100%;
+      /* justify-content: center; */
+    position: absolute;
+    bottom: 0;
+     overflow-x: scroll;
+     padding-left: 1em;
+  }
+
+  .detail {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width:100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-right: 20px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .label {
+    font-size: 16px;
+    color: rgb(33, 65, 244);
+    text-transform: uppercase;
+  }
+  
+  .value {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #0240ab;
+  }
+  
+  .detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  }   
+  .fiveday{
+    position: relative;
+    width: 55%;
+    height: 30rem;
+    border-radius: 10px;
+    overflow-x: hidden;
+    background-image: url(img/5dayimg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.days{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 20px 10px;
+}
+.day{
+    width: 75%;
+    height: 90%;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: larger;
+    box-shadow: 0 0 20px 2px white ;
+}
+
+.daylogo img{
+    position: absolute;
+    top: 0rem;
+    right: 0.5rem;
+    width: 70px;
+}
+
+.daytext{
+   margin-top: 20px;
+    font-size:30px ;
+
+}
+
+.daytemp
+{
+    font-size:30px ;
+
+}
+.dayName{
+    position: absolute;
+    top: 0.5rem;
+    left: 1.5rem;
+}
+@media (max-width:1400px)
+{
+   .mainsec{
+    flex-direction: column;
+   }
+   .today{
+    width:100%;
+   }
+   .fiveday{
+    width:100%;
+   }
+
+   .wdeatil{
+    font-size: 3em;
+    left: 40%;
+
+   }
+
+   .wlogo img {
+        width:15em;
+   }
+
+   .day img{
+    width: 100px;
+   }
+   .dayName{
+    margin-top: 20px;
+    font-size:25px;
+   }
+
+   #c2{
+    visibility: hidden;
+   }
+
+}
+
+@media (max-width:1000px){
+    #c1{
+        visibility: hidden;
+    }
+    #c2{
+        visibility: hidden;
+    }
+    #c3{
+        visibility: hidden;
+    }
+    #c5{
+        visibility: hidden;
+    }
+    #c6{
+        visibility: hidden;
+    }
+
+    .form{
+         float: left;
+         margin-left: 1em;
+    }
+
+    .clockcontain{
+        /* position: absolute; */
+        
+        /* flex-direction: column; */
+        width: 15em;
+        height: 5em;
+        top: -1em;
+        /* padding: 0; */
+        margin-top: 0px;
+        /* text-align: center; */
+        /* justify-content: center; */
+        align-items: center;
+
+
+    }
+    .date1{
+        visibility: hidden;
+    }
+
+    #clock{
+        font-size: 1.8em;
+        margin-left: 0.7em;
+    }
+
+}
+
+@media (max-width:1280px) {
+    header{
+        padding:12px 2%;
+        transform-origin: .2s;
+    }
+   
+    .navbar a{
+        padding:5px 0;
+        margin:0px 30px;
+
+    }
+
+    #c3{
+        visibility: hidden;
+
+    }
+    
+}
+
+@media (max-width:870px) {
+        
+    .mainsec{
+        width: 100%;
+
+    }
+
+    .day{
+        width: 100%;
+    }
+
+    .fiveday{
+        width: 100%;
+    }
+    .input{
+        width: 18em;
+    }
+}
+@media(max-width:700px)
+{  
+    header{
+    height: 50px;
+
+    }
+   header .logo span{font-size: 23px;} 
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        z-index: 1000001;
+        position:absolute;
+        top:100%;
+        left:-100%;
+        width:100%;
+        /* background: #7c07f1; */
+        background:transparent;
+        /* filter: blur(5px); */
+        backdrop-filter:blur(150px);
+        display: flex;
+        margin-top: 6px;
+        margin-right: 60px;
+
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+    
+        transition: all 0.5s ease;
+    }
+
+    
+
+    .navbar a{
+
+        color: #0240ab;
+        display:block;
+       margin:12px 0;
+       transition: all 0.5s ease-in-out;
+       padding:0px 25px;
+    }
+
+    .navbar a:hover{
+        /* color: var(--text-color); */
+        color: #1160e9;
+        transform: translateY(2px);
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+
+    .navbar a.active{
+        color: #1160e9;
+    }
+
+    .navbar.open{
+        left:100vw;
+        transform: translateX(-100%);
+    }
+
+    .input{
+        width: 15em;
+    }
+
+
+    .wdeatil{
+        font-size: 2.5em;
+        left: 25%;
+    }
+
+    .div2 {
+        top:0.0001em;
+        right: 0.5em;
+    }
+
+    .wlogo img{
+        width: 10em;
+    }
+
+    .locValue{
+        font-size: 0.8em;
+    }
+
+    .tempValue{
+        font-size: 0.8em;
+    }
+
+    .clockcontain{
+        width: 13em;
+    }
+
+    #clock
+    {
+        font-size: 1.5em;
+    }
+   
+    .days{
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .day{
+        scale: 0.8;
+        padding:0;
+    }
+   .dayName{
+    margin-top: 5px;
+    position: absolute;
+    scale: 0.8;
+  
+   }
+  .day img{
+    margin-top:2px;
+    width: 60px;
+  }
+   
+    .daytext{
+        scale: 0.6;
+    }
+}
+
+@media (max-width:480px) {
+
+    .input{
+        /* left:150px; */
+        width: 10em;
+    }
+
+
+    .form-container{
+        display: flex;
+        /* justify-content: space-between; */
+    }
+    .clockcontain{
+        width: 8em;
+        margin-right: 2em;
+        padding: 5px;
+    }
+    
+    #clock{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+}
